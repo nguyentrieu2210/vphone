@@ -39,7 +39,8 @@ namespace vphone.Models
                     .HasColumnName("CREATED_AT");
 
                 entity.Property(e => e.Description)
-                    .HasColumnType("text")
+                    .HasColumnType("NVARCHAR(MAX)")
+                    .IsUnicode(true)
                     .HasColumnName("DESCRIPTION");
 
                 entity.Property(e => e.Slug)
@@ -95,9 +96,8 @@ namespace vphone.Models
                     .HasColumnName("PRICE_TOTAL");
 
                 entity.Property(e => e.State)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("STATE");
+                .HasColumnType("bit")
+                .HasColumnName("STATE");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
@@ -156,7 +156,7 @@ namespace vphone.Models
                     .HasColumnName("ID");
 
                 entity.Property(e => e.BatteryCapacity)
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("BATTERY_CAPACITY");
 
@@ -167,7 +167,7 @@ namespace vphone.Models
                     .HasColumnName("CREATED_AT");
 
                 entity.Property(e => e.Description)
-                    .HasColumnType("text")
+                    .HasColumnType("NVARCHAR(MAX)")
                     .HasColumnName("DESCRIPTION");
 
                 entity.Property(e => e.Image)
@@ -176,7 +176,7 @@ namespace vphone.Models
                     .HasColumnName("IMAGE");
 
                 entity.Property(e => e.InternalMemory)
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("INTERNAL_MEMORY");
 
@@ -185,11 +185,11 @@ namespace vphone.Models
                 entity.Property(e => e.IsStock).HasColumnName("IS_STOCK");
 
                 entity.Property(e => e.Name)
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .HasColumnName("NAME");
 
                 entity.Property(e => e.OperatingSystem)
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("OPERATING_SYSTEM");
 
@@ -198,7 +198,7 @@ namespace vphone.Models
                     .HasColumnName("PRICE");
 
                 entity.Property(e => e.Processor)
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("PROCESSOR");
 
@@ -208,17 +208,17 @@ namespace vphone.Models
                     .HasColumnName("RAM");
 
                 entity.Property(e => e.Resolution)
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("RESOLUTION");
 
                 entity.Property(e => e.ScreenSize)
-                    .HasMaxLength(50)
+                    .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("SCREEN_SIZE");
 
                 entity.Property(e => e.ScreenTech)
-                    .HasMaxLength(255)
+                    .HasColumnType("NVARCHAR(MAX)")
                     .HasColumnName("SCREEN_TECH");
 
                 entity.Property(e => e.Slug)
