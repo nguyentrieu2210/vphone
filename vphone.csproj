@@ -10,6 +10,7 @@
     <Folder Include="Controllers\Site\" />
     <Folder Include="Views\Site\" />
     <Folder Include="wwwroot\admin\" />
+    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\site\" />
   </ItemGroup>
 
