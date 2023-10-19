@@ -1,13 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using vphone.Models;
 
 namespace vphone.Controllers.Admin
 {
 	public class UserController : Controller
 	{
+        private QLQuanDTContext db;
+
+        public UserController (QLQuanDTContext db)
+        {
+            this.db = db;
+        }   
+
         [Route("/admin/user")]
         public IActionResult Index()
         {
-            return View("~/Views/Admin/User/listuser.cshtml");
+            var users = db.Users.ToList();
+            return View("~/Views/Admin/User/listuser.cshtml", users);
         }
 
         [Route("/admin/user/add")]
