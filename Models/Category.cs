@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace vphone.Models
 {
@@ -9,7 +10,7 @@ namespace vphone.Models
         {
             Products = new HashSet<Product>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Title { get; set; }
         public string Slug { get; set; }
