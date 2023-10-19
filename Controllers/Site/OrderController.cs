@@ -4,10 +4,10 @@ namespace vphone.Controllers.Site
 {
     public class OrderController : Controller
     {
-        [Route("/order")]
+        [Route("/success")]
         public IActionResult Index()
         {
-            return View("~/Views/Site/Order/Index.cshtml");
+            return View("~/Views/Site/Success/Index.cshtml");
         }
     }
 }
